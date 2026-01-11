@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import Services from './pages/services';
+
 import ContactPage from './pages/contacts/ContactPage';
 import { MessageSquare } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -33,7 +33,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/services" element={<Services />} />
+      
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </Router>
