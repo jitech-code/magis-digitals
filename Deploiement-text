@@ -1,0 +1,93 @@
+C'est un excellent choix ! Utiliser **Vite** avec **React** est actuellement la méthode la plus rapide et la plus efficace pour le développement web moderne.
+
+Voici la marche à suivre étape par étape pour préparer votre projet `magis-digitals`, le pousser sur GitHub, puis le déployer gratuitement.
+
+---
+
+## 1. Préparer le projet et l'envoyer sur GitHub
+
+Avant tout, assurez-vous d'avoir créé votre dépôt (repository) vide sur GitHub.
+
+1. **Initialisez Git** dans votre dossier local :
+```bash
+git init
+
+```
+
+
+2. **Ajoutez vos fichiers** :
+```bash
+git add .
+git commit -m "Initial commit : projet magis-digitals"
+
+```
+
+
+3. **Liez votre projet à GitHub** (remplacez par votre lien) :
+```bash
+git branch -M main
+git remote add origin https://github.com/VOTRE_NOM/magis-digitals.git
+git push -u origin main
+
+```
+
+
+
+---
+
+## 2. Déploiement sur GitHub Pages (Le plus simple)
+
+GitHub Pages est parfait pour les sites statiques comme les projets React/Vite.
+
+* **Étape A :** Installez le package gh-pages : `npm install gh-pages --save-dev`.
+* **Étape B :** Dans votre fichier `vite.config.js`, ajoutez la propriété `base` :
+```javascript
+export default defineConfig({
+  plugins: [react()],
+  base: '/magis-digitals/', // Le nom de votre dépôt GitHub
+})
+
+```
+
+
+* **Étape C :** Dans `package.json`, ajoutez ces scripts :
+```json
+"scripts": {
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist"
+}
+
+```
+
+
+* **Étape D :** Lancez `npm run deploy`. Votre site sera en ligne sur `https://votre-nom.github.io/magis-digitals/`.
+
+---
+
+## 3. Déploiement sur Render (Plus puissant)
+
+Render est une excellente alternative si vous préférez une mise à jour automatique à chaque "Push".
+
+1. Créez un compte sur **Render.com** et connectez votre GitHub.
+2. Cliquez sur **New +** > **Static Site**.
+3. Sélectionnez votre dépôt `magis-digitals`.
+4. Configurez les paramètres suivants :
+* **Build Command :** `npm run build`
+* **Publish Directory :** `dist` (C'est le dossier généré par Vite).
+
+
+5. Cliquez sur **Deploy**. Render vous donnera une URL du type `magis-digitals.onrender.com`.
+
+---
+
+### Quel service choisir ?
+
+| Caractéristique | GitHub Pages | Render |
+| --- | --- | --- |
+| **Rapidité** | Très rapide | Rapide |
+| **Configuration** | Manuelle (scripts) | Automatique au push |
+| **Gestion des routes** | Parfois complexe (besoin de 404.html) | Gère mieux le Single Page Application |
+
+> **Note importante :** Si vous utilisez **React Router** pour la navigation, je vous conseille vivement **Render**. Il permet de configurer facilement les redirections pour éviter les erreurs 404 lors d'un rafraîchissement de page.
+
+Souhaitez-vous que je vous aide à configurer le fichier `vite.config.js` ou que je vous explique comment gérer les routes sur Render ?

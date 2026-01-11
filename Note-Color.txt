@@ -1,0 +1,6 @@
+code couleur : 
+bleu: #002955
+semi-blue: #06a0f8
+primary-blue: #16e3f4
+Clear: #fec389
+semi-clear: #ffc289
